@@ -1,0 +1,45 @@
+.header {
+  display: none;
+}
+
+.button {
+  background-color: var(--white);
+  cursor: pointer;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  border: none;
+}
+
+.button svg {
+  vertical-align: bottom;
+}
+
+.mobileMenu {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background: #F6F6F8;
+  right: 0;
+  bottom: 0;
+  padding: 20px 16px;
+  overflow-y: hidden;
+}
+
+.close {
+  position: fixed;
+  z-index: 11;
+  top: 20px;
+  right: 16px;
+}
+
+@media (max-width: 765px) {
+	.header {
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    gap: 10px;
+    align-items: center;
+    padding: 20px 16px;
+	}
+}

@@ -1,0 +1,284 @@
+.product {
+  display: grid;
+  margin-bottom: 30px;
+  padding: 30px;
+  background-color: var(--white);
+  border-radius: 5px;
+  grid-template-columns: [start] 70px [logoend] 30px [titlestart]
+  calc(50% - 100px) [middle] 1fr 40px [pricestart] auto [priceend]
+  40px [ratestart] auto [end];
+}
+
+.logo {
+  display: flex;
+	grid-column: start / logoend;
+	grid-row: 1 / span 2;
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  color: var(--dark);
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.title,
+.tags {
+	grid-column: titlestart / pricestart;
+  align-self: center;
+}
+
+.price,
+.priceTitle {
+	grid-column: pricestart / priceend;
+	white-space: nowrap;
+  align-self: center;
+}
+
+.rate,
+.rateTitle {
+	grid-column: ratestart / end;
+	white-space: nowrap;
+  align-self: center;
+}
+
+.price {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  align-self: center;
+  display: flex;
+  align-items: center;
+}
+
+.sale {
+  margin-left: 10px;
+}
+
+.priceTitle, .rateTitle {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 19px;
+  text-transform: uppercase;
+}
+
+.hr {
+  grid-column: start / end;
+  margin: 20px 0;
+  border-width: 1px 0 0;
+  border-style: solid;
+  border-color: var(--grey-light);
+}
+
+.subTitle {
+  grid-column: start / end;
+  padding-bottom: 20px;
+}
+
+.characteristics {
+  grid-column: start / middle;
+}
+
+.achievements {
+  grid-column: middle / end;
+  padding-left: 20px;
+
+}
+
+.achievement{
+  display: flex;
+  padding-top: 8px;
+}
+
+.description {
+  grid-column: start / pricestart;
+}
+
+.descriptionText {
+  height: 80px;
+  overflow: hidden;
+  padding-top: 10px;
+  background-image: linear-gradient(var(--dark), var(--white));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  transition: height 0.1s ease-out;
+}
+
+.descriptionTextOpen {
+  height: 100%;
+  -webkit-text-fill-color: var(--dark);
+  -moz-text-fill-color: var(--dark);
+  transition: height 0.1s ease-out;
+}
+
+.achievementTag {
+  padding: 5px;
+  height: 24px;
+}
+
+.characteristic {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  padding-right: 20px;
+  gap: 5px;
+  align-items: baseline;
+  padding-bottom: 12px;
+}
+
+.characteristicName {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.characteristicDots {
+  border-bottom: 1px dashed var(--dark);
+  margin-bottom: 5px;
+}
+
+.buttons {
+  grid-column: start / middle;
+  align-self: flex-end;
+  padding-top: 10px;
+}
+
+.button {
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .product {
+    display: grid;
+    margin-bottom: 30px;
+    padding: 30px;
+    grid-template-columns:  70px 30px 
+    auto  40px  auto 
+    40px  1fr;
+    grid-template-areas:
+      "logo . title title title title title"
+      "logo . tags tags tags tags tags"
+      ". . price price price . rate"
+			". . priceTitle priceTitle priceTitle . rateTitle"
+      "hr hr hr hr hr hr hr"
+      "subTitle subTitle subTitle subTitle subTitle subTitle subTitle"
+      "characteristics characteristics characteristics characteristics characteristics characteristics characteristics"
+      "achievements achievements achievements achievements achievements achievements achievements"
+      "hr2 hr2 hr2 hr2 hr2 hr2 hr2"
+      "description description description description description description description"
+      "buttons buttons buttons buttons buttons . ."
+    ;
+  }
+
+  .logo {
+		grid-area: logo;
+	}
+
+	.title {
+		grid-area: title;
+	}
+
+	.tags {
+		grid-area: tags;
+
+		margin-bottom: 20px;
+	}
+
+	.price {
+		grid-area: price;
+	}
+
+	.rate {
+		grid-area: rate;
+	}
+
+	.priceTitle {
+		grid-area: priceTitle;
+	}
+
+	.rateTitle {
+		grid-area: rateTitle;
+	}
+
+	.hr {
+		grid-area: hr;
+	}
+
+  .hr2 {
+    grid-area: hr2;
+  }
+
+  .subTitle {
+    grid-area: subTitle;
+  }
+
+  .characteristics {
+    grid-area: characteristics;
+  }
+
+  .characteristic {
+    padding-right: 0;
+  }
+
+  .achievements {
+    grid-area: achievements;
+    padding-left: 0;
+  }
+
+  .description {
+    grid-area: description;
+  }
+
+  .buttons {
+    grid-area: buttons;
+  }
+}
+
+/* .logo {
+  grid-column: start / logoend;
+  grid-row: 1 / span 2;
+  background-color: blue;
+  border-radius: 5px;
+}
+
+.title, .tags {
+  grid-column: titlestart / middle;
+}
+
+.price, .priceTitle {
+  grid-column: pricestart / priceend;
+}
+
+.rating, .rateTitle {
+  grid-column: ratestart / end;
+}
+
+.credit,
+.creditTitle {
+	grid-column: creditstart / creditend;
+}
+
+.tags, .priceTitle, .rateTitle, .creditTitle {
+  grid-row: 2;
+}
+
+.title, .price, .rating {
+  align-self: center;
+}
+
+.hr {
+  grid-column: start / end;
+}
+
+.subTitle {
+  grid-column: start / end;
+}
+
+.characteristics {
+  grid-column: start / middle;
+}
+
+.requirements {
+  grid-column: middle / end;
+} */

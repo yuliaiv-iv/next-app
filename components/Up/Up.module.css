@@ -1,0 +1,12 @@
+.up {
+  background-color: transparent;
+  position: fixed;
+  bottom: 70px;
+  /* right: 0; */
+  border: none;
+  cursor: pointer;
+}
+
+.up svg:hover {
+  fill: var(--primary-hover);
+}

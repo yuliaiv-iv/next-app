@@ -1,0 +1,28 @@
+.sort {
+  display: inline-block;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  color: var(--dark);
+}
+
+.button svg {
+  display: none;
+}
+
+.active svg {
+  display: block;
+  margin-right: 8px;
+}
+
+.active {
+  font-weight: bold;
+  color: var(--primary);
+}
