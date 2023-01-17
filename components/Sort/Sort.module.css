@@ -9,7 +9,9 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
   cursor: pointer;
+
   color: var(--dark);
   border: none;
   background-color: transparent;
@@ -21,12 +23,14 @@
 
 .active svg {
   display: block;
+
   margin-right: 8px;
 }
 
 .active {
-  font-weight: bold;
   color: var(--primary);
+
+  font-weight: bold;
 }
 
 .sortName {

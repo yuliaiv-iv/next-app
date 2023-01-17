@@ -2,23 +2,24 @@
 .h2,
 .h3 {
   margin: 0;
+
   color: var(--dark);
 }
 
 .h1 {
   font-size: 26px;
-  line-height: 35px;
   font-weight: 500;
+  line-height: 35px;
 }
 
 .h2 {
-  font-weight: 600;
   font-size: 20px;
+  font-weight: 600;
   line-height: 27px;
 }
 
 .h3 {
-  font-weight: 600;
   font-size: 16px;
-  line-height: 22px;  
+  font-weight: 600;
+  line-height: 22px;
 }

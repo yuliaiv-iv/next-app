@@ -1,71 +1,85 @@
 .product {
   display: grid;
+
   margin-bottom: 30px;
   padding: 30px;
-  background-color: var(--white);
+
   border-radius: 5px;
-  grid-template-columns: [start] 70px [logoend] 30px [titlestart]
-  calc(50% - 100px) [middle] 1fr 40px [pricestart] auto [priceend]
-  40px [ratestart] auto [end];
+  background-color: var(--white);
+  grid-template-columns:
+    [start] 70px [logoend] 30px [titlestart]
+    calc(50% - 100px) [middle] 1fr 40px [pricestart] auto [priceend]
+    40px [ratestart] auto [end];
 }
 
 .logo {
   display: flex;
-	grid-column: start / logoend;
-	grid-row: 1 / span 2;
-  width: 70px;
-  height: 70px;
-  border-radius: 5px;
-  color: var(--dark);
   align-items: center;
   justify-content: center;
+
+  width: 70px;
+  height: 70px;
+
+  color: var(--dark);
+  border-radius: 5px;
+
   font-size: 26px;
   font-weight: bold;
+  grid-column: start / logoend;
+  grid-row: 1 / span 2;
 }
 
 .title,
 .tags {
-	grid-column: titlestart / pricestart;
+  grid-column: titlestart / pricestart;
+
   align-self: center;
 }
 
 .price,
 .priceTitle {
-	grid-column: pricestart / priceend;
-	white-space: nowrap;
   align-self: center;
+
+  white-space: nowrap;
+  grid-column: pricestart / priceend;
 }
 
 .rate,
 .rateTitle {
-	grid-column: ratestart / end;
-	white-space: nowrap;
   align-self: center;
+
+  white-space: nowrap;
+  grid-column: ratestart / end;
 }
 
 .price {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 27px;
-  align-self: center;
   display: flex;
   align-items: center;
+  align-self: center;
+
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
 }
 
 .sale {
   margin-left: 10px;
 }
 
-.priceTitle, .rateTitle {
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 19px;
+.priceTitle,
+.rateTitle {
   text-transform: uppercase;
+
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 19px;
 }
 
 .hr {
   grid-column: start / end;
+
   margin: 20px 0;
+
   border-width: 1px 0 0;
   border-style: solid;
   border-color: var(--grey-light);
@@ -73,6 +87,7 @@
 
 .subTitle {
   grid-column: start / end;
+
   padding-bottom: 20px;
 }
 
@@ -82,12 +97,13 @@
 
 .achievements {
   grid-column: middle / end;
-  padding-left: 20px;
 
+  padding-left: 20px;
 }
 
-.achievement{
+.achievement {
   display: flex;
+
   padding-top: 8px;
 }
 
@@ -96,51 +112,58 @@
 }
 
 .descriptionText {
-  height: 80px;
   overflow: hidden;
+
+  height: 80px;
   padding-top: 10px;
-  background-image: linear-gradient(var(--dark), var(--white));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
+
   transition: height 0.1s ease-out;
+
+  background-image: linear-gradient(var(--dark), var(--white));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
 
 .descriptionTextOpen {
   height: 100%;
   -webkit-text-fill-color: var(--dark);
   -moz-text-fill-color: var(--dark);
+
   transition: height 0.1s ease-out;
 }
 
 .achievementTag {
-  padding: 5px;
   height: 24px;
+  padding: 5px;
 }
 
 .characteristic {
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  padding-right: 20px;
-  gap: 5px;
   align-items: baseline;
+
+  padding-right: 20px;
   padding-bottom: 12px;
+  grid-template-columns: auto 1fr auto;
+  gap: 5px;
 }
 
 .characteristicName {
-  font-weight: bold;
   font-size: 16px;
+  font-weight: bold;
 }
 
 .characteristicDots {
-  border-bottom: 1px dashed var(--dark);
   margin-bottom: 5px;
+
+  border-bottom: 1px dashed var(--dark);
 }
 
 .buttons {
   grid-column: start / middle;
+
   align-self: flex-end;
+
   padding-top: 10px;
 }
 
@@ -159,59 +182,60 @@
 @media screen and (max-width: 1200px) {
   .product {
     display: grid;
+
     margin-bottom: 30px;
     padding: 30px;
-    grid-template-columns:  70px 30px 
-    auto  40px  auto 
-    40px  1fr;
+    grid-template-columns:
+      70px 30px
+      auto  40px  auto
+      40px  1fr;
     grid-template-areas:
       "logo . title title title title title"
       "logo . tags tags tags tags tags"
       ". . price price price . rate"
-			". . priceTitle priceTitle priceTitle . rateTitle"
+      ". . priceTitle priceTitle priceTitle . rateTitle"
       "hr hr hr hr hr hr hr"
       "subTitle subTitle subTitle subTitle subTitle subTitle subTitle"
       "characteristics characteristics characteristics characteristics characteristics characteristics characteristics"
       "achievements achievements achievements achievements achievements achievements achievements"
       "hr2 hr2 hr2 hr2 hr2 hr2 hr2"
       "description description description description description description description"
-      "buttons buttons buttons buttons buttons . ."
-    ;
+      "buttons buttons buttons buttons buttons . .";
   }
 
   .logo {
-		grid-area: logo;
-	}
+    grid-area: logo;
+  }
 
-	.title {
-		grid-area: title;
-	}
+  .title {
+    grid-area: title;
+  }
 
-	.tags {
-		grid-area: tags;
+  .tags {
+    grid-area: tags;
 
-		margin-bottom: 20px;
-	}
+    margin-bottom: 20px;
+  }
 
-	.price {
-		grid-area: price;
-	}
+  .price {
+    grid-area: price;
+  }
 
-	.rate {
-		grid-area: rate;
-	}
+  .rate {
+    grid-area: rate;
+  }
 
-	.priceTitle {
-		grid-area: priceTitle;
-	}
+  .priceTitle {
+    grid-area: priceTitle;
+  }
 
-	.rateTitle {
-		grid-area: rateTitle;
-	}
+  .rateTitle {
+    grid-area: rateTitle;
+  }
 
-	.hr {
-		grid-area: hr;
-	}
+  .hr {
+    grid-area: hr;
+  }
 
   .hr2 {
     grid-area: hr2;
@@ -231,6 +255,7 @@
 
   .achievements {
     grid-area: achievements;
+
     padding-left: 0;
   }
 

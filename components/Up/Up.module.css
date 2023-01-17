@@ -1,10 +1,12 @@
 .up {
-  background-color: transparent;
   position: fixed;
   bottom: 70px;
+
+  cursor: pointer;
+
   /* right: 0; */
   border: none;
-  cursor: pointer;
+  background-color: transparent;
 }
 
 .up svg:hover {

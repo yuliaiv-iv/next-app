@@ -8,6 +8,7 @@ html,
 body {
   /* overflow-x: hidden; */
   max-width: 100vw;
+
   background-color: #F6F6F8;
 }
 
@@ -15,11 +16,12 @@ body {
   margin: 0;
   padding: 0;
 
-  font-family: "Noto Sans", "Roboto", "Inter", "Arial", sans-serif;
+  font-family: "Noto Sans", Roboto, Inter, Arial, sans-serif;
 }
 
 a {
   text-decoration: none;
+
   color: inherit;
 }
 
@@ -27,22 +29,27 @@ ul {
   list-style: none;
 }
 
+p {
+  margin: 0;
+}
+
 :root {
   --dark: #3B434E; /* test on the mane page */
-  --grey: #6c7077;
-  --grey-light: #d6d6d6;
-	--white: white;
-	--primary: #347eff;
-  --primary-light: #f2f5fa;
-	--primary-hover: #0457e6;
+  --grey: #6C7077;
+  --grey-light: #D6D6D6;
+  --white: white;
+  --primary: #347EFF;
+  --primary-light: #F2F5FA;
+  --primary-hover: #0457E6;
   --green: #007B48;
-	--green-light: #C8F8E4;
+  --green-light: #C8F8E4;
 }
 
 .visuallyHidden {
+  position: absolute;
+
+  overflow: hidden;
+
   width: 0;
   height: 0;
-  overflow: hidden;
-  position: absolute;
 }
-

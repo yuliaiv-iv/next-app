@@ -1,4 +1,5 @@
 import React, { useReducer, useEffect } from "react";
+import cn from "classnames";
 import { MainPageProps } from "./MainPage.props";
 import styles from "./MainPage.module.css";
 import { Sort, Tag, HeadingTag, Paragraph, Courses } from "../../components";
@@ -6,7 +7,7 @@ import { SortEnum } from "../../components/Sort/Sort.props";
 import { sortReducer } from "../../components/Sort/sort.reducer";
 import { useReducedMotion } from "framer-motion";
 
-function MainPage({ page }: MainPageProps): JSX.Element {
+function MainPage({ page, className }: MainPageProps): JSX.Element {
   const { title, seoText, products } = page;
   const shouldReduceMotion = useReducedMotion();
 
@@ -34,7 +35,7 @@ function MainPage({ page }: MainPageProps): JSX.Element {
           <Sort sort={sort} setSort={setSort} />
         )}
       </div>
-      <Paragraph className={styles.seo}>{seoText}</Paragraph>
+      <Paragraph className={cn(className, styles.seo)}>{seoText}</Paragraph>
       <div role="list">
         {sortedProducts.length === 0 ? (
           <HeadingTag tag="h2">Content is not available yet</HeadingTag>

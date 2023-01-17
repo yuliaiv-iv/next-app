@@ -1,18 +1,21 @@
 .footer {
   display: grid;
+
+  padding: 20px 30px;
+
+  background-color: var(--primary);
   grid-template-columns: 1fr auto auto;
   gap: 10px 40px;
-  background-color: var(--primary);
-  padding: 20px 30px;
 }
 
 .paragraph {
-  font-weight: 500;
   color: var(--white);
+
+  font-weight: 500;
 }
 
 .paragraph a:hover {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 @media (max-width: 995px) {
@@ -24,6 +27,7 @@
 @media (max-width: 765px) {
   .footer {
     grid-template-columns: 1fr;
+
     padding: 16px;
   }
 }

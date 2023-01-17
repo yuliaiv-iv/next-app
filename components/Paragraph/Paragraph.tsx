@@ -12,7 +12,7 @@ function Paragraph({
 }: ParagraphProps): JSX.Element {
   return (
     <p
-      className={cn(className, styles.p, {
+      className={cn(className, styles.paragraph, {
         [styles.small]: size === "small",
         [styles.medium]: size === "medium",
         [styles.large]: size === "large",

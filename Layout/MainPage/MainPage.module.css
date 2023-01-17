@@ -1,6 +1,7 @@
 .title {
   display: grid;
   grid-template-columns: auto 1fr auto;
+
   align-items: center;
   justify-items: flex-start;
   gap: 20px;
@@ -8,6 +9,7 @@
 
 .seo {
   margin: 20px 0;
+
   color: #3B434E;
 }
 
