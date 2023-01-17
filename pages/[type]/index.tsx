@@ -21,10 +21,10 @@ function Type({ firstCategory }: TypeProps): JSX.Element {
   return (
     <>
       <HeadingTag tag="h1">
-        {capitalized(firstCategoryItem.name)} Page
+        {capitalized(firstCategoryItem?.name)} Page
       </HeadingTag>
       <Paragraph>
-        Some content related {capitalized(firstCategoryItem.name)} section
+        Some content related {capitalized(firstCategoryItem?.name)} section
       </Paragraph>
     </>
   );
