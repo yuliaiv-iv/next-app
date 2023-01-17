@@ -11,6 +11,8 @@
   justify-content: flex-end;
   cursor: pointer;
   color: var(--dark);
+  border: none;
+  background-color: transparent;
 }
 
 .button svg {
@@ -25,4 +27,8 @@
 .active {
   font-weight: bold;
   color: var(--primary);
+}
+
+.sortName {
+  display: none;
 }

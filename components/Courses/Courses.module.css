@@ -144,9 +144,17 @@
   padding-top: 10px;
 }
 
-.button {
+.buttons > * {
   margin-right: 20px;
 }
+
+.buttons:last-child {
+  margin-right: none;
+}
+
+/* .button {
+  margin-right: 20px;
+} */
 
 @media screen and (max-width: 1200px) {
   .product {

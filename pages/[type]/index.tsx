@@ -2,7 +2,11 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import React from "react";
 import { withLayout } from "../../Layout/Layout";
 import { MenuItem } from "../../interfaces/menu.interface";
-import { firebaseDocs, firstLevelMenu } from "../../helpers/helpers";
+import {
+  capitalized,
+  firebaseDocs,
+  firstLevelMenu,
+} from "../../helpers/helpers";
 import { ParsedUrlQuery } from "querystring";
 import { getCollectionData } from "../../helpers/api";
 import { HeadingTag, Paragraph } from "../../components";
@@ -11,19 +15,16 @@ const { mainCollection } = firebaseDocs;
 
 function Type({ firstCategory }: TypeProps): JSX.Element {
   const firstCategoryItem = firstLevelMenu.find(
-    (m) => m.route === firstCategory
+    (m) => m.route === firstCategory!
   )!;
 
-  const capitalized = (word: string) => {
-    return word.charAt(0).toUpperCase() + word.slice(1);
-  };
   return (
     <>
       <HeadingTag tag="h1">
-        {capitalized(firstCategoryItem?.name)} Page
+        {capitalized(firstCategoryItem.name)} Page
       </HeadingTag>
       <Paragraph>
-        Some content related {capitalized(firstCategoryItem?.name)} section
+        Some content related {capitalized(firstCategoryItem.name)} section
       </Paragraph>
     </>
   );

@@ -4,14 +4,16 @@ import styles from "./Header.module.css";
 import cn from "classnames";
 import Logo from "../../assets/Icons/Logo";
 import Menu from "../../assets/Icons/Menu";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Sidebar from "../Sidebar/Sidebar";
 import CloseBtn from "../../assets/Icons/CloseBtn";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 function Header({ className, ...props }: HeaderProps): JSX.Element {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const router = useRouter();
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     setIsOpened(false);
@@ -26,14 +28,16 @@ function Header({ className, ...props }: HeaderProps): JSX.Element {
       },
     },
     closed: {
-      opacity: 0,
+      opacity: shouldReduceMotion ? 1 : 0,
       x: "100%",
     },
   };
 
   return (
     <header className={cn(className, styles.header)} {...props}>
-      <Logo />
+      <Link href="/">
+        <Logo className={styles.logo} aria-label="Site Logo and name Isinka" />
+      </Link>
       <button className={styles.button}>
         <Menu onClick={() => setIsOpened(true)} />
       </button>

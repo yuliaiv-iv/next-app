@@ -10,6 +10,11 @@ import Tag from "../Tag/Tag";
 import Check from "../../assets/Icons/Check";
 import Paragraph from "../Paragraph/Paragraph";
 import Button from "../Button/Button";
+import {
+  firstLetter,
+  calculateDiscount,
+  wordEnding,
+} from "../../helpers/helpers";
 
 const Courses = motion(
   forwardRef(
@@ -31,32 +36,10 @@ const Courses = motion(
         sale,
       } = product;
 
-      const variants = {
-        visible: { opacity: 1, height: "auto" },
-        hidden: { opacity: 0, height: "80px" },
-      };
-
       const [isOpen, setIsOpen] = useState<boolean>(false);
 
       function handleDescriptionOpen() {
         setIsOpen(!isOpen);
-      }
-
-      function firstLetter(str: string) {
-        return str.slice(0, 1);
-      }
-
-      function wordEnding(num: number): string {
-        if (num === 1) {
-          return `${num} Review`;
-        } else if (num === 0) {
-          return "No Reviews";
-        } else {
-          return `${num} Reviews`;
-        }
-      }
-      function calculateDiscount(price: number, sale: number) {
-        return `- $ ${((price * sale) / 100).toFixed(2)}`;
       }
 
       return (
@@ -68,12 +51,17 @@ const Courses = motion(
             {title}
           </HeadingTag>
           <div className={styles.price}>
-            <div>{`$ ${price.toFixed(2)}`}</div>
+            <span>
+              <span className="visuallyHidden">Price</span>
+              {`$ ${price.toFixed(2)}`}
+            </span>
             <Tag color="green" size="small" className={styles.sale}>
+              <span className="visuallyHidden">Sale</span>
               {sale && calculateDiscount(price, sale)}
             </Tag>
           </div>
           <div className={styles.rate}>
+            <span className="visuallyHidden">{"Rating" + rating}</span>
             <Rating rating={rating} />
           </div>
           <div className={styles.tags}>
@@ -83,7 +71,9 @@ const Courses = motion(
               </Tag>
             ))}
           </div>
-          <div className={styles.priceTitle}>Price</div>
+          <div className={styles.priceTitle} aria-hidden={true}>
+            Price
+          </div>
           <div className={styles.rateTitle}>{wordEnding(review)}</div>
           <hr className={styles.hr} />
           <Paragraph className={styles.subTitle}>{subTitle}</Paragraph>
@@ -125,11 +115,6 @@ const Courses = motion(
             >
               {description}
             </Paragraph>
-            {/* <motion.div variants={variants} initial="hidden" animate={isOpen ? "visible" : "hidden"}>
-              <Paragraph className={styles.descriptionText}>
-                {description}
-              </Paragraph>
-            </motion.div> */}
           </div>
           <div className={styles.buttons}>
             <Button
@@ -140,15 +125,15 @@ const Courses = motion(
             >
               Show More
             </Button>
-            <Button
-              appearance="secondary"
-              className={cn(className, styles.button)}
-              arrow="right"
-            >
-              <a href="https://nextjs.org/" target="_blank">
+            <a href="https://nextjs.org/" target="_blank">
+              <Button
+                appearance="secondary"
+                className={cn(className, styles.button)}
+                arrow="right"
+              >
                 Learn More
-              </a>
-            </Button>
+              </Button>
+            </a>
           </div>
         </section>
       );

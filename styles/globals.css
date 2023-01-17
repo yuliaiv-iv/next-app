@@ -29,7 +29,7 @@ ul {
 
 :root {
   --dark: #3B434E; /* test on the mane page */
-  --grey: #787D85;
+  --grey: #6c7077;
   --grey-light: #d6d6d6;
 	--white: white;
 	--primary: #347eff;
@@ -37,5 +37,12 @@ ul {
 	--primary-hover: #0457e6;
   --green: #007B48;
 	--green-light: #C8F8E4;
+}
+
+.visuallyHidden {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
 }
 

@@ -11,7 +11,7 @@ function Sidebar({ className, ...props }: SidebarProps): JSX.Element {
   return (
     <aside className={cn(className, styles.sidebar)} {...props}>
       <Link href="/">
-        <Logo className={styles.logo} />
+        <Logo className={styles.logo} aria-label="Site Logo and name Isinka" />
       </Link>
       <Menu />
       {/* <Up /> */}
