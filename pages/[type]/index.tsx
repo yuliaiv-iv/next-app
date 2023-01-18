@@ -15,17 +15,21 @@ const { mainCollection } = firebaseDocs;
 
 function Type({ firstCategory }: TypeProps): JSX.Element {
   const firstCategoryItem = firstLevelMenu.find(
-    (m) => m.route === firstCategory!
+    (m) => m.route === firstCategory
   )!;
 
   return (
     <>
-      <HeadingTag tag="h1">
-        {capitalized(firstCategoryItem?.name)} Page
-      </HeadingTag>
-      <Paragraph>
-        Some content related {capitalized(firstCategoryItem?.name)} section
-      </Paragraph>
+      {firstCategoryItem && (
+        <>
+          <HeadingTag tag="h1">
+            {capitalized(firstCategoryItem.name)} Page
+          </HeadingTag>
+          <Paragraph>
+            Some content related {capitalized(firstCategoryItem.name)} section
+          </Paragraph>
+        </>
+      )}
     </>
   );
 }

@@ -9,23 +9,24 @@ import { PageModel } from "../../interfaces/page.interface";
 import { firebaseDocs, firstLevelMenu } from "../../helpers/helpers";
 import MainPage from "../../Layout/MainPage/MainPage";
 import { getCollectionData, getDocData } from "../../helpers/api";
-import Head from "next/head"
+import Head from "next/head";
 
 const { mainCollection, pageCollection, pageDocument } = firebaseDocs;
 
-function Page({ page, firstCategory, menu }: any) {
-
+function Page({ page }: any): JSX.Element {
   return (
     <>
-    <Head>
-      <title>{page.title}</title>
-      <meta name="description" content={page.seoText} />
-      <meta property="og:title" content={page.title} />
-      <meta property="og:description" content={page.seoText} />
-      <meta property="og:type" content="article" />
-    </Head>
       {page && (
-        <MainPage page={page} firstCategory={firstCategory} menu={menu} />
+        <>
+          <Head>
+            <title>{page.title}</title>
+            <meta name="description" content={page.seoText} />
+            <meta property="og:title" content={page.title} />
+            <meta property="og:description" content={page.seoText} />
+            <meta property="og:type" content="article" />
+          </Head>
+          <MainPage page={page} />
+        </>
       )}
     </>
   );

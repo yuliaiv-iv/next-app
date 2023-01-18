@@ -10,6 +10,6 @@ export interface TopPageAdvantage {
 
 export interface PageModel {
   title: string;
-	seoText: string;
+  seoText: string;
   products: ProductModel[];
 }

@@ -10,12 +10,12 @@ import {
 } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_API_KEY,
-  authDomain: process.env.NEXT_DOMAIN,
-  projectId: process.env.NEXT_PROJECT_ID,
-  storageBucket: process.env.NEXT_STORAGE,
-  messagingSenderId: process.env.NEXT_SENDER_ID,
-  appId: process.env.NEXT_APP_ID,
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE,
+  messagingSenderId: process.env.NEXT_PUBLIC_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);

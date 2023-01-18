@@ -1,12 +1,16 @@
-import React, { FunctionComponent, useRef, useState, KeyboardEvent } from "react";
+import React, {
+  FunctionComponent,
+  useRef,
+  useState,
+  KeyboardEvent,
+} from "react";
 import { LayoutProps } from "./Layout.props";
 import styles from "./Layout.module.css";
 import Sidebar from "./Sidebar/Sidebar";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
-import cn from 'classnames';
+import cn from "classnames";
 import { IMenuContext, MenuContextProvider } from "../context/MenuContext";
-import { Up } from "../components";
 
 function Layout({ children }: LayoutProps): JSX.Element {
   const [isSkipLinkDisplayed, setIsSkipLinkDisplayed] =
@@ -35,24 +39,18 @@ function Layout({ children }: LayoutProps): JSX.Element {
       </a>
       <Header className={styles.header} />
       <Sidebar className={styles.sidebar} />
-      <main 
-        className={styles.main} 
-        ref={bodyRef} 
-        tabIndex={0}
-        role="main"
-      >
+      <main className={styles.main} ref={bodyRef} tabIndex={0} role="main">
         {children}
       </main>
       <Footer className={styles.footer} />
-      {/* <Up /> */}
     </div>
   );
 }
 
-export const withLayout = <Props extends IMenuContext>(
-  Component: FunctionComponent<Props>
+export const withLayout = <T extends IMenuContext>(
+  Component: FunctionComponent<T>
 ) => {
-  return function withLayoutComponent(props: Props): JSX.Element {
+  return function withLayoutComponent(props: T): JSX.Element {
     return (
       <MenuContextProvider
         menu={props.menu}

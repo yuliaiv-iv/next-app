@@ -175,10 +175,6 @@
   margin-right: none;
 }
 
-/* .button {
-  margin-right: 20px;
-} */
-
 @media screen and (max-width: 1200px) {
   .product {
     display: grid;
@@ -268,50 +264,33 @@
   }
 }
 
-/* .logo {
-  grid-column: start / logoend;
-  grid-row: 1 / span 2;
-  background-color: blue;
-  border-radius: 5px;
-}
+@media screen and (max-width: 520px) {
+  .product {
+    padding: 10px;
+		grid-template-columns: 70px 30px 1fr;
+		grid-template-areas:
+			"logo . title"
+			"tags tags tags"
+			"priceTitle priceTitle price"
+			"rateTitle rateTitle rate"
+			"hr hr hr"
+			"subTitle subTitle subTitle"
+			"characteristics characteristics characteristics"
+			"achievements achievements achievements"
+			"hr2 hr2 hr2"
+			"description description description"
+      "buttons buttons buttons";
+	}
 
-.title, .tags {
-  grid-column: titlestart / middle;
-}
+  .tags {
+    margin-bottom: 0;
+    margin-top: 10px;
+  }
 
-.price, .priceTitle {
-  grid-column: pricestart / priceend;
+  .price, .priceTitle, .rate, .rateTitle {
+		margin-bottom: 10px;
+	}
+  .price, .priceTitle {
+    margin-top: 10px;
+  }
 }
-
-.rating, .rateTitle {
-  grid-column: ratestart / end;
-}
-
-.credit,
-.creditTitle {
-	grid-column: creditstart / creditend;
-}
-
-.tags, .priceTitle, .rateTitle, .creditTitle {
-  grid-row: 2;
-}
-
-.title, .price, .rating {
-  align-self: center;
-}
-
-.hr {
-  grid-column: start / end;
-}
-
-.subTitle {
-  grid-column: start / end;
-}
-
-.characteristics {
-  grid-column: start / middle;
-}
-
-.requirements {
-  grid-column: middle / end;
-} */

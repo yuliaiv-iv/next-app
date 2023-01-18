@@ -8,13 +8,13 @@ export interface PageItem {
 }
 
 export interface Categories {
-	secondCategory: string;
+  secondCategory: string;
   pages: PageItem[];
   isOpen?: boolean;
 }
 
 export interface CategoriesModel {
-	categories: Categories[]
+  categories: Categories[];
 }
 
 export type MenuItem = Record<string, CategoriesModel>;

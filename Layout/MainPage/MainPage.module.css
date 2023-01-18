@@ -13,7 +13,7 @@
   color: #3B434E;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   .title {
     grid-template-columns: auto 1fr;
   }

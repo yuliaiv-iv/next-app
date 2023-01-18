@@ -39,7 +39,7 @@ function Menu(): JSX.Element {
       opacity: 1,
       height: "auto",
     },
-    hidden: { opacity: shouldReduceMotion ? 1 : 0, height: 0 },
+    hidden: { opacity: shouldReduceMotion ? 1 : 0, height: 0 }
   };
 
   const setMenu = (newMenu: Categories[]) => {

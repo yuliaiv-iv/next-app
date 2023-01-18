@@ -2,14 +2,9 @@ import React, { ForwardedRef, forwardRef, useState } from "react";
 import { CoursesProps } from "./Courses.props";
 import styles from "./Courses.module.css";
 import { motion } from "framer-motion";
-
 import cn from "classnames";
-import HeadingTag from "../HeadingTag/HeadingTag";
-import Rating from "../Rating/Rating";
-import Tag from "../Tag/Tag";
+import { HeadingTag, Rating, Tag, Paragraph, Button } from "../index";
 import Check from "../../assets/Icons/Check";
-import Paragraph from "../Paragraph/Paragraph";
-import Button from "../Button/Button";
 import {
   firstLetter,
   calculateDiscount,

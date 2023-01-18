@@ -15,5 +15,5 @@ export interface ProductModel {
   achievements: string[];
   rating: number;
   review: number;
-	sale?: number;
+  sale?: number;
 }

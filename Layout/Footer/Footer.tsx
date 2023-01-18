@@ -8,13 +8,13 @@ function Footer({ className, ...props }: FooterProps): JSX.Element {
   return (
     <footer {...props} className={cn(className, styles.footer)}>
       <Paragraph className={styles.paragraph}>
-        OwlTop © 2020 - 2021 Все права защищены
+        Isinka © 2022 All rights reserved
       </Paragraph>
       <Paragraph className={styles.paragraph}>
-        <a href="#">Пользовательское соглашение</a>
+        <a href="#">Terms</a>
       </Paragraph>
       <Paragraph className={styles.paragraph}>
-        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Privacy policy</a>
       </Paragraph>
     </footer>
   );

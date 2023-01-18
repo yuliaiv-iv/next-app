@@ -17,6 +17,10 @@
   background-color: transparent;
 }
 
+.button:hover {
+  color: var(--grey);
+}
+
 .button svg {
   display: none;
 }
@@ -31,6 +35,10 @@
   color: var(--primary);
 
   font-weight: bold;
+}
+
+.active:hover {
+  color: var(--primary);
 }
 
 .sortName {

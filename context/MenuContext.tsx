@@ -1,11 +1,10 @@
 import { createContext, ReactNode } from "react";
-import { Categories, MenuItem } from "../interfaces/menu.interface";
+import { MenuItem } from "../interfaces/menu.interface";
 import { TopLevelCategory } from "../interfaces/page.interface";
 
 export interface IMenuContext {
   menu: MenuItem;
   firstCategory: TopLevelCategory;
-  setMenu?: (newMenu: Categories[]) => void;
 }
 
 export const MenuContext = createContext<IMenuContext>({
@@ -13,16 +12,13 @@ export const MenuContext = createContext<IMenuContext>({
   firstCategory: "courses",
 });
 
-
 export const MenuContextProvider = ({
   menu,
   firstCategory,
   children,
 }: IMenuContext & { children: ReactNode }) => {
-
-
   return (
-    <MenuContext.Provider value={{ menu, firstCategory}}>
+    <MenuContext.Provider value={{ menu, firstCategory }}>
       {children}
     </MenuContext.Provider>
   );

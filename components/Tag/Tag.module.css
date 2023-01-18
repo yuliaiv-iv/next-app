@@ -36,13 +36,9 @@
 .grey {
   color: white;
   background: #B3C0D9;
-
-  /* font-weight: bold; */
 }
 
 .green {
   color: var(--green);
   background: var(--green-light);
-
-  /* font-weight: bold; */
 }

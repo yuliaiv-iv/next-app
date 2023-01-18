@@ -6,7 +6,6 @@
 
 html,
 body {
-  /* overflow-x: hidden; */
   max-width: 100vw;
 
   background-color: #F6F6F8;
@@ -34,15 +33,15 @@ p {
 }
 
 :root {
-  --dark: #3B434E; /* test on the mane page */
-  --grey: #6C7077;
-  --grey-light: #D6D6D6;
-  --white: white;
-  --primary: #347EFF;
-  --primary-light: #F2F5FA;
+  --dark: #3B434E; /* test on the mane page, primary */
+  --grey: #6C7077; /* primary*/
+  --grey-light: #D6D6D6; /* secondary */
+  --white: white; /* primary*/
+  --primary: #347EFF; /* primary*/
+  --primary-light: #F2F5FA; /* secondary */
   --primary-hover: #0457E6;
-  --green: #007B48;
-  --green-light: #C8F8E4;
+  --green: #007B48; /* secondary */
+  --green-light: #C8F8E4; /* secondary */
 }
 
 .visuallyHidden {
@@ -52,4 +51,16 @@ p {
 
   width: 0;
   height: 0;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.error > * {
+  margin-bottom: 40px;
 }
