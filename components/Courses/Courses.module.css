@@ -267,30 +267,35 @@
 @media screen and (max-width: 520px) {
   .product {
     padding: 10px;
-		grid-template-columns: 70px 30px 1fr;
-		grid-template-areas:
-			"logo . title"
-			"tags tags tags"
-			"priceTitle priceTitle price"
-			"rateTitle rateTitle rate"
-			"hr hr hr"
-			"subTitle subTitle subTitle"
-			"characteristics characteristics characteristics"
-			"achievements achievements achievements"
-			"hr2 hr2 hr2"
-			"description description description"
+    grid-template-columns: 70px 30px 1fr;
+    grid-template-areas:
+      "logo . title"
+      "tags tags tags"
+      "priceTitle priceTitle price"
+      "rateTitle rateTitle rate"
+      "hr hr hr"
+      "subTitle subTitle subTitle"
+      "characteristics characteristics characteristics"
+      "achievements achievements achievements"
+      "hr2 hr2 hr2"
+      "description description description"
       "buttons buttons buttons";
-	}
-
-  .tags {
-    margin-bottom: 0;
-    margin-top: 10px;
   }
 
-  .price, .priceTitle, .rate, .rateTitle {
-		margin-bottom: 10px;
-	}
-  .price, .priceTitle {
+  .tags {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  .price,
+  .priceTitle,
+  .rate,
+  .rateTitle {
+    margin-bottom: 10px;
+  }
+
+  .price,
+  .priceTitle {
     margin-top: 10px;
   }
 }

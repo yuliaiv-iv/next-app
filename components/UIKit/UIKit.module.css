@@ -3,15 +3,17 @@
 }
 
 .card {
-  background-color: var(--white);
   padding: 20px;
+
   border-radius: 10px;
+  background-color: var(--white);
 }
 
 .cards {
   display: grid;
   grid-template-columns: minmax(max-content, auto) minmax(max-content, auto);
   gap: 20px 20px;
+
   margin-top: 20px;
 }
 
@@ -23,36 +25,38 @@
   margin-bottom: 20px;
 }
 
-.colors  {
+.colors {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   gap: 20px;
-  flex-wrap: wrap;
 }
 
-.primary, .secondary {
+.primary,
+.secondary {
   padding: 10px 15px;
+
   border-radius: 5px;
 }
 
 .primary:nth-of-type(1) {
-  background-color: var(--dark);
   color: var(--white);
+  background-color: var(--dark);
 }
 
 .primary:nth-of-type(2) {
-  background-color: var(--grey);
   color: var(--white);
+  background-color: var(--grey);
 }
 
 .primary:nth-of-type(3) {
-  background-color: var(--white);
   border: 1px solid var(--grey);
+  background-color: var(--white);
 }
 
 .primary:nth-of-type(4) {
-  background-color: var(--primary);
   color: var(--white);
+  background-color: var(--primary);
 }
 
 .secondary:nth-of-type(1) {
@@ -64,8 +68,8 @@
 }
 
 .secondary:nth-of-type(3) {
-  background-color: var(--green);
   color: var(--white);
+  background-color: var(--green);
 }
 
 .secondary:nth-of-type(4) {
@@ -77,7 +81,7 @@
 }
 
 .hoverP {
-  background-color: var(--primary-hover)
+  background-color: var(--primary-hover);
 }
 
 .hoverS {
@@ -99,13 +103,12 @@
   }
 }
 
-
-
 @media (max-width: 400px) {
   .rating {
     flex-direction: column;
   }
+
   .ratingItem {
     margin-bottom: 15px;
-  } 
+  }
 }

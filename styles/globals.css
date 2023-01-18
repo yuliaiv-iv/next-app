@@ -34,10 +34,10 @@ p {
 
 :root {
   --dark: #3B434E; /* test on the mane page, primary */
-  --grey: #6C7077; /* primary*/
+  --grey: #6C7077; /* primary */
   --grey-light: #D6D6D6; /* secondary */
-  --white: white; /* primary*/
-  --primary: #347EFF; /* primary*/
+  --white: white; /* primary */
+  --primary: #347EFF; /* primary */
   --primary-light: #F2F5FA; /* secondary */
   --primary-hover: #0457E6;
   --green: #007B48; /* secondary */
@@ -55,10 +55,11 @@ p {
 
 .error {
   display: flex;
-  flex-direction: column;
-  height: 80vh;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 80vh;
 }
 
 .error > * {
