@@ -66,4 +66,8 @@
   .sidebar {
     display: none !important;
   }
+
+  .header {
+    display: grid;
+  }
 }
