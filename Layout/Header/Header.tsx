@@ -34,7 +34,7 @@ function Header({ className, ...props }: HeaderProps): JSX.Element {
   };
 
   return (
-    <header className={cn(className, styles.header)} {...props}>
+    <header className={cn(styles.header, className)} {...props}>
       <Link href="/">
         <Logo className={styles.logo} aria-label="Site Logo and name Isinka" />
       </Link>
